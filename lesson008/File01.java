@@ -1,6 +1,5 @@
 package JavaLesson.lesson008;
 import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
 /**
  Создать директорию с заданным именем.
@@ -8,7 +7,7 @@ import java.util.Scanner;
  Имена директории и файла вводятся с клавиатуры
  */
 public class File01 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner scn = new Scanner(System.in);
         System.out.println("Имя диска - ");
         String nameDisc = scn.nextLine();
@@ -23,11 +22,7 @@ public class File01 {
         if (file2.exists()) {
             System.out.println("Данный файл уже существует.");
         } else {
-            try {
-                file2.createNewFile();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            file2.createNewFile();
         }
         System.out.println("Директория и файл успешно созданы");
     }
